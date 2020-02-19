@@ -76,7 +76,9 @@ VimeoPlaylist.prototype = {
    */
   loadVid(id) {
     this.player.loadVideo(id)
-    this.player['play']()
+    setTimeout(() => {
+        //this.player['play']()
+      }, 100)
   },
 
   /**
@@ -87,10 +89,6 @@ VimeoPlaylist.prototype = {
     this.player.on('ended', () =>  {
       this.next()
     });
-  },
-
-  ifEnded() {
-
   },
 
   /**
