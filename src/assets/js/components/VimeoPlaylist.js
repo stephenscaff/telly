@@ -41,9 +41,14 @@ VimeoPlaylist.prototype = {
   init() {
 
     // Autoplay
-    this.player['play']()
+    this.settings()
     this.listeners()
-    //this.player.setVolume(0);
+    this.player['play']()
+   },
+
+   settings() {
+     this.player.setVolume(0);
+     this.player.setAutopause(false)
    },
 
    /**
@@ -84,6 +89,10 @@ VimeoPlaylist.prototype = {
     });
   },
 
+  ifEnded() {
+
+  },
+
   /**
    * Next
    * Tracks current video index and progress to next.
@@ -107,7 +116,12 @@ VimeoPlaylist.prototype = {
    */
   prev() {},
 
-
+  /**
+   * Toggle Fullscreen
+   * This is bs. Looks like vimeo uses a different
+   * fullscreen than native requestFullscreen.
+   * Leaving here until I figure that out.
+   */
   toggleFullscreen() {
     let vidWrapper = this.wrapperEl
     if (!document.vidWrapper) {
