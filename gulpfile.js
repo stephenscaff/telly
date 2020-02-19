@@ -107,7 +107,7 @@ function serve() {
 function watch() {
   gulp.watch('src/assets/scss/**/*', buildCSS)
   gulp.watch('src/assets/js/**/*', buildJS)
-  gulp.watch('src/data/**/*', buildData)
+  gulp.watch('src/assets/data/**/*', buildData)
   gulp.watch('src/assets/images/**/*', buildImages)
   gulp.watch('src/views/**/*', buildViews)
   gulp.watch('src/**/*.html', serve, (file) => {
