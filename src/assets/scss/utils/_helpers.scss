@@ -1,0 +1,42 @@
+//--------------------------------------------
+// Alignment Helpers
+//--------------------------------------------
+.is-text-center{
+  text-align: center;
+}
+
+.is-centered {
+  display: block;
+  margin: 0 auto;
+}
+
+//--------------------------------------------
+// Visibility Helpers
+//--------------------------------------------
+.is-hidden {
+  display: none !important;
+}
+
+.is-visually-hidden {
+  position: absolute !important;
+  left: -9999px !important;
+  height: 1px;
+  width: 1px;
+  clip: rect(0,0,0,0);
+  overflow: hidden;
+}
+
+.no-interaction {
+  pointer-events: none !important;
+}
+
+//--------------------------------------------
+// Hide Line Breaks
+//--------------------------------------------
+%no-breaks,
+.no-breaks {
+
+  br {
+    display: none;
+  }
+}

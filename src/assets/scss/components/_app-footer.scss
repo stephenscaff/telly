@@ -1,0 +1,15 @@
+//--------------------------------------------
+// App Footer
+//--------------------------------------------
+.app-footer{
+  padding: $pad 0;
+  text-align: center;
+
+  &__icon {
+    font-size: 2em;
+  }
+  
+  p {
+    margin-bottom: 0;
+  }
+}
