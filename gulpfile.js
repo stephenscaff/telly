@@ -13,7 +13,8 @@ const gulp            = require('gulp'),
       sass            = require('gulp-sass'),
       source          = require('vinyl-source-stream'),
       terser          = require('gulp-terser'),
-      gls             = require('gulp-live-server');
+      gls             = require('gulp-live-server'),
+      open             = require('open');
 
 // Server Port
 const PORT = 8000;
@@ -99,7 +100,24 @@ function buildData() {
 // Serve (simple express server)
 function serve() {
   var server = gls.static('dist/', PORT);
-  server.start();
+  //server.start();
+  var promise = server.start();
+  //optionally handle the server process exiting
+  promise.then(function(result) {
+    console.log('server started')
+    openBrowser()
+  });
+}
+
+/**
+ * Open Browser
+ * @requires open
+ */
+function openBrowser() {
+  var url = `http://localhost:${PORT}`;
+  var chrome = ('google chrome' || 'google-chrome' || 'chrome');
+
+  open(url, {app: 'google chrome'});
 }
 
 
@@ -115,6 +133,8 @@ function watch() {
   });
 }
 
+
+
 // Build
 var build = gulp.parallel(
   buildCSS,
@@ -123,7 +143,7 @@ var build = gulp.parallel(
   buildViews,
   buildData,
   serve,
-  watch,
+  watch
 );
 
 gulp.task(build);
