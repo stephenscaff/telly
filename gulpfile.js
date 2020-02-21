@@ -117,7 +117,7 @@ function openBrowser() {
   var url = `http://localhost:${PORT}`;
   var chrome = ('google chrome' || 'google-chrome' || 'chrome');
 
-  open(url, {app: 'google chrome'});
+  open(url);
 }
 
 

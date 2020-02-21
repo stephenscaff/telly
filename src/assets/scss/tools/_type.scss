@@ -34,24 +34,6 @@
   }
 }
 
-//----------------------------------------------
-//  Font Styles
-//----------------------------------------------
-@mixin font-uppercase($size: $font-xs, $weight: 700) {
-  font-size: $size;
-  font-weight: $weight;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-}
-
-@mixin font-meta($mb:0, $size: $font-xs, $weight: 700){
-  margin-bottom: $mb;
-  font-family: $font-paragraph;
-  font-size: $size;
-  font-weight: $weight;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-}
 
 //----------------------------------------------
 //  Text Formating
@@ -61,9 +43,9 @@
   display: block;
 }
 
-@mixin text-overflow($width:90%) {
+@mixin text-overflow($max-width:90%) {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: $width;
+  max-width: $max-width;
 }

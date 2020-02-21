@@ -1,0 +1,108 @@
+.playlist {
+  position: relative;
+  padding: 0 0 $pad;
+
+  &__header {
+    border-bottom: 1px solid rgba(255,255,255,0.2)
+  }
+
+  &__title {
+    font-size: 1.2em;
+    color: $color-white;
+
+  }
+  &__scroller {
+    overflow: scroll;
+    max-height: 70vh;
+  }
+}
+
+$plist-col-pad: 1em;
+
+.plist-item {
+  position: relative;
+  padding: 1em 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: background-color 1s ease;
+
+  &:hover {
+  //  background-color: rgba(0,0,0,0.1);
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    color: #fff;
+  }
+
+  &__thumb {
+    position: relative;
+    @include flex-col(30%)
+    padding-right: $plist-col-pad;
+  }
+
+  &__thumb-color {
+    background-color: $color-alpha;
+    transform: scale(1);
+    transition: transform 0.25s $ease-cb;
+
+    .plist-item:hover & {
+      transform: scale(0.95);
+    }
+    .plist-item__link.is-playing & {
+      transform: scale(0.95);
+    }
+  }
+
+  &__thumb-img {
+    display: block;
+    transform: scale(1);
+    transition: transform 0.25s $ease-cb;
+
+    .plist-item:hover & {
+      opacity: 0.5;
+    }
+    .plist-item__link.is-playing & {
+      opacity: 0.3;
+    }
+  }
+
+  &__icon-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+
+    .is-playing & {
+      opacity: 1;
+    }
+  }
+
+  &__main {
+    position: relative;
+    @include flex-col(70%);
+    padding-left: 1em;
+    padding: 0.5em 0em 0 $plist-col-pad;
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 0.3em;
+    font-weight: 700;
+    font-size: 1.2em;
+    @include text-overflow($max-width: 80%)
+  }
+
+  &__time-dur {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    color: #fff;
+    font-family: $font-mono;
+    font-size: $font-xs;
+  }
+}

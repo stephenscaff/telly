@@ -31,7 +31,7 @@ $font-lg: 1.5em;
 $font-med: 1.15em;
 $font-base: 1em;
 $font-sm: 0.85em;
-$font-xs: 0.65em;
+$font-xs: 0.725em;
 $font-xxs: 0.7rem;
 $font-scale: 0.15em;
 
@@ -59,7 +59,7 @@ $mq-xxxl: 130em;
 // Grid
 //----------------------------------------------
 $grid-width:          92%;
-$grid-max-width:      60em;
+$grid-max-width:      50em;
 $grid-max-width-sm:   41em;
 $grid-width-med:      70%;
 $grid-width-lg:       88%;
@@ -97,7 +97,7 @@ $measure-med: 30em;
 //----------------------------------------------
 // Colors
 //----------------------------------------------
-$color-blue:       #433ed7;
+$color-blue:       #0d0de6;
 $color-alpha:      $color-blue;
 $color-beta:       #3da1ef;
 $color-white:      #fff;
@@ -105,7 +105,7 @@ $color-dark:       #242424;
 $color-grey-lightest: #f9f8ff;
 $color-grey-light:    #f6f6f6;
 $color-grey-mid:       #645853;
-$color-grey-dark:     #222;
+$color-grey-dark:     #111;
 $color-warning:       #c43a31;
 $color-success:       #1ABC9C;
 

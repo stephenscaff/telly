@@ -1,0 +1,55 @@
+$eq-height: 1.1em;
+
+@mixin equalize($number) {
+	animation: equalize #{$number}s linear infinite;
+}
+
+@keyframes equalize  {
+	0% {
+		height: 0;
+  }
+
+	50% {
+		height: 20px;
+  }
+
+	100% {
+		height: 5px;
+  }
+}
+
+.equalizer {
+  position: absolute;
+  bottom: 2.5%; // aligns with 0.95 scale of thumb 5% /2 = 2.5
+  display: flex;
+  align-items: flex-end;
+  height: $eq-height;
+  width: $eq-height;
+  margin-top: 0.5em;
+  opacity: 0;
+
+  .is-playing & {
+    opacity: 1;
+  }
+
+  &__item {
+    position: relative;
+  	display: inline-block;
+  	width: 2px;
+  	height: $eq-height;
+    margin: 0 2px;
+    background: #fff;
+  }
+
+  &__item:nth-of-type(1) {
+    @include equalize(.5);
+  }
+
+  &__item:nth-of-type(2) {
+    @include equalize(.9);
+  }
+
+  &__item:nth-of-type(3) {
+    @include equalize(.7);
+  }
+}
