@@ -1,17 +1,30 @@
 {
   "name": "telly",
   "version": "1.0.0",
-  "description": "A simple app to project videos (probs Vimeo)v on the telly",
+  "description": "An app and plugin to make video playlists with the Vimeo Player API.",
   "main": "index.js",
   "scripts": {
+    "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/stephenscaff/telly#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenscaff/telly"
   },
   "keywords": [
     "vimeo",
-    "tv",
+    "vimeo player api",
+    "vimeo api",
+    "vimeo playlist",
+    "playlist",
+    "telly",
     "fullscreen"
   ],
-  "author": "Stephen Scaff",
+  "author": {
+    "name": "Stephen Scaff",
+    "url": "stephenscaff.com"
+  },
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.6.3",
