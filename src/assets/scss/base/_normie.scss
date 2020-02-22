@@ -24,7 +24,7 @@ body {
 // Prevent ios lag and horz overflow issues
 //----------------------------------------------
 html, body {
-  overflow-x: hidden;
+  //overflow-x: hidden;
   -webkit-overflow-scrolling: touch; // fix iOS lag
 }
 

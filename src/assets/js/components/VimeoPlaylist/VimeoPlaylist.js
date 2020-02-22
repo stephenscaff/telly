@@ -112,7 +112,7 @@ VimeoPlaylist.prototype = {
       vidInfo.then(obj => {
         counter++;
         let tmpl = plistItemTemplate(obj[0])
-        let frag = Utils.createFrag(tmpl)
+        let frag = Utils.createFrag(tmpl, 'article', 'plist-item')
         this.playlistOutput.appendChild(frag)
 
         if (counter === this.vidCount) {

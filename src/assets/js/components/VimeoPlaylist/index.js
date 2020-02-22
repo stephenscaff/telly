@@ -11,7 +11,7 @@ fetch(req)
   .then(data => {
     let options = {
       playlist: data,
-      muted: true,
+      muted:    true,
       controls: true
     }
     let vids = new VimeoPlaylist('js-player', options).init()
