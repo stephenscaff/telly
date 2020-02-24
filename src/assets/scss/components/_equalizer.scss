@@ -39,6 +39,13 @@ $eq-height: 1.1em;
   	height: $eq-height;
     margin: 0 2px;
     background: #fff;
+    transition: height 0.3s ease;
+
+    .plist-item .is-paused & {
+      animation-duration: 0s;
+      height: 1px;
+      transition: height 1s ease;
+    }
   }
 
   &__item:nth-of-type(1) {

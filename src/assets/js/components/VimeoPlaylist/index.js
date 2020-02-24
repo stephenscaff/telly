@@ -1,4 +1,6 @@
-import VimeoPlaylist from './VimeoPlaylist.js'
+"use strict"
+
+import VimeoPlaylist from './vimeo-playlist.js'
 
 /**
  * init VimeoPlaylist class
@@ -11,8 +13,11 @@ fetch(req)
   .then(data => {
     let options = {
       playlist: data,
+      playlistOutput: '#js-playlist',
       muted:    true,
-      controls: true
+      controls: true,
+      fullScreenToggle: true,
+      color: "#7B8EF9"
     }
     let vids = new VimeoPlaylist('js-player', options).init()
 })

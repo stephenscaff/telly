@@ -55,8 +55,13 @@ $plist-col-pad: 1em;
     .plist-item:hover & {
       transform: scale(0.95);
     }
+
     .plist-item__link.is-playing & {
       transform: scale(0.95);
+    }
+
+    .plist-item__link.is-paused & {
+      transform: scale(1);
     }
   }
 
@@ -84,6 +89,10 @@ $plist-col-pad: 1em;
     .is-playing & {
       opacity: 1;
       transform: translate(-50%, -50%) scale(1);
+    }
+
+    .is-paused & {
+      opacity: 0.5;
     }
   }
 

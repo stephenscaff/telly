@@ -1,4 +1,6 @@
-import Utils from './Utils';
+"use strict"
+
+import { formatTime } from './utils';
 
 /**
  * plistTemplate
@@ -9,7 +11,7 @@ import Utils from './Utils';
  */
 export default function plistItemTemplate(data) {
 
-  let timeDuration = Utils.strToMMSS(data.duration)
+  let timeDuration = formatTime(data.duration)
 
   return `
     <a class="plist-item__link" data-vimeo-id="${data.id}">
