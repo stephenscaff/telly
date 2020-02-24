@@ -1,5 +1,9 @@
 .player {
-  padding: $pad 0 $pad-sm;
+  padding: $pad-xs 0 $pad-sm;
+
+  @media (min-width: $mq-med) {
+    padding: $pad 0 $pad-sm;
+  }
 
   &__flex {
     position:relative;
