@@ -16,6 +16,7 @@ import plistItemTemplate from './plist.tmpl';
 function VimeoPlaylist(el, options) {
   options = options || {}
   Object.assign(this, VimeoPlaylist.options, options)
+
   this.playlistOutput = document.querySelector(this.playlistOutput)
   this.playListItems = []
   this.currentVidIdx = 0

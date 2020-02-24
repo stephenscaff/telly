@@ -1,8 +1,8 @@
-# Telly! 📺📼
+# Telly! 📼→📺
 
 ### A little app and js plugin using the Vimeo Player API to create a nonstop playlist of Vimeo Vids.
 
-Telly was built to play dope Vimeo vids on the TV screens around the office... to inspire designers and stuff.
+Telly was built to play dope Vimeo vids on the TV screens around the office... to inspire designers and stuff. The plugin can also be found in it' own repo: [vimeo-playlists.js](https://github.com/stephenscaff/vimeo-playlists)
 
 ### Install
 
@@ -19,38 +19,59 @@ Fires up the app's Express server (currently via `gulp-live-server`) and opens y
 Made a plugin using the Vimeo stuff.
 See `src/assets/js/components/VimeoPlaylist`
 
-The plugin allows you to create a playlist of Vimeo Vid IDs, passed as an array to the plugin options or as a external data source (JSON file).
+Or, the separate repo [vimeo-playlists.js](https://github.com/stephenscaff/vimeo-playlists)
+
+The plugin allows you to create a playlist of Vimeo Vids by passing vimeo ids to the plugin's `playlist` options.
 
 
-### Plugin Usage
+## Plugin Usage
 
 *Markup*
 
 ```
-<!-- Player -->
+<!-- Player (main video embed)-->
 <div id="js-player"></div>
 
-<!-- Playlist -->
-<div class="js-playlist"></div>
+<!-- Playlist (list of vids) -->
+<div id="js-playlist"></div>
 ```
 
-*JS*
+#### JS - Init Example with `playlist`
 
 ```
-import VimeoPlaylist from './VimeoPlaylist.js'
+import VimeoPlaylist from './vimeo-playlist.js' (or whatever you add)
+
+/**
+ * Options
+ * Internal playlist as array of objects { "id" : <vimeoid> }
+ */
+VimeoPlaylist.options = {
+  width: 1200,
+  muted: true,
+  controls: true,
+  autoplay: true,
+  color: '#7B8EF9',
+  fullscreenToggle: true,
+  playlistOutput: '#js-playlist',
+  playlist: [
+    { "id": "288588748" },
+    { "id": "328536852" },
+    { "id": "281449879" }
+  ]
+}
 
 let vids = new VimeoPlaylist('js-player', options).init()
 ```
 
-*JS - External JSON File*
+#### JS Options - External JSON File
 ```
-import VimeoPlaylist from './VimeoPlaylist.js'
+import VimeoPlaylist from './vimeo-playlist.js'
 
 /**
  * Init VimeoPlaylist class
  * Inside request of external data source
  */
-const req = new Request('assets/data/playlist.json');
+const req = new Request('assets/data/playlist.json') // external json of playlist
 
 fetch(req)
   .then(response => response.json())
@@ -64,7 +85,7 @@ fetch(req)
 })
 ```
 
-*JSON - Example*
+#### JSON File Example
 
 ```
 // Array of objects
@@ -81,23 +102,21 @@ fetch(req)
   ....
 ```
 
-*JS - Options*
-```
-VimeoPlaylist.options = {
-  width: 1200,
-  loop: false,
-  title: false,
-  muted: true,
-  controls: true,
-  autoplay: true,
-  color:    '#7B8EF9',
-  playlist: [
-    {"id":"288588748"},
-    {"id":"343513016"},
-    {"id":"310394931"}
-  ]
-}
-```
+
+## Options
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `width` | Number | Video width in px |
+| `title` | Boolean | Show video title |
+| `muted` | Boolean | Mute vids |
+| `controls` | Boolean | Show player controls |
+| `autoplay` | Boolean | Autoplay vids (required for continuous playlist vids) |
+| `fullScreenToggle` | Boolean | Clicking  `Enter` triggers fullscreen vid |
+| `color` | String (3 or 6 digit hex value) | Player ui color |
+| `playlistOutput` | string | id or class to output playlist |
+| `playlist` | Array of Objects | playlist as array of objects { "id" : <vimeoid> } |
+
 
 ### ToDo
 
