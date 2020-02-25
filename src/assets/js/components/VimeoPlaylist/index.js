@@ -13,6 +13,7 @@ fetch(req)
   .then(data => {
     let options = {
       playlist: data,
+      hasPlaylist: true,
       playlistOutput: '#js-playlist',
       muted:    true,
       controls: true,

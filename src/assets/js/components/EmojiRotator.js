@@ -1,5 +1,6 @@
 /**
  * Emojis Roator
+ * Just For Fun
  */
 const EmojiRotator = (() => {
   const el = document.querySelector('.js-emoji')
