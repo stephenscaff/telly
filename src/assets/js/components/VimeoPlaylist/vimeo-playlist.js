@@ -133,7 +133,7 @@ VimeoPlaylist.prototype = {
     if (this.fullscreenToggle) {
       document.addEventListener("keypress", (e)=> {
         if (e.keyCode === 13) this.toggleFullscreen()
-      }, false);
+      }, false)
     }
   },
 
@@ -145,22 +145,22 @@ VimeoPlaylist.prototype = {
    * @fires { setupFirstVid | handlePlaylistClicks}
    */
   buildPlaylist() {
-    let counter = 0;
+    let counter = 0
 
     this.playlist.forEach((plist, i) => {
-      let id = plist.id;
+      let id = plist.id
       let vidInfo = fetchData("https://vimeo.com/api/v2/video/"+ id +".json")
 
       vidInfo.then(obj => {
-        counter++;
+        counter++
         let tmpl = plistItemTemplate(obj[0])
         let frag = createFrag(tmpl, 'article', 'plist-item')
         if (this.playlistOutput) this.playlistOutput.appendChild(frag)
 
         if (counter === this.vidCount) {
           this.setupFirstVid()
-          // define this.playlistItems
           if (!this.hasPlaylist ) return
+          // define this.playlistItems
           this.playlistItems = document.querySelectorAll('.plist-item__link')
           this.handlePlaylistClicks()
 
@@ -190,7 +190,7 @@ VimeoPlaylist.prototype = {
 
       item.addEventListener('click', (e) => {
         e.preventDefault()
-        let id = item.dataset.vimeoId;
+        let id = item.dataset.vimeoId
         this.currentVidIdx = i
         this.loadVid(id)
         this.setActiveState()
@@ -228,9 +228,9 @@ VimeoPlaylist.prototype = {
     this.currentVidIdx++
 
     if (this.currentVidIdx < this.vidCount){
-      this.currentVidIdx + 1;
+      this.currentVidIdx + 1
     } else {
-      this.currentVidIdx = 0;
+      this.currentVidIdx = 0
     }
     this.loadVid(this.playlist[this.currentVidIdx])
   },
